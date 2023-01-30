@@ -1,3 +1,4 @@
+// Define the Calculator class
 class Calculator {
 	constructor(previousOperandTextElement, currentOperandTextElement) {
 	  // store the element references for updating the display	
