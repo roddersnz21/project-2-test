@@ -110,13 +110,19 @@ class Calculator {
 	}
   }
   
-  
+  // Select all buttons with data-number attribute
   const numberButtons = document.querySelectorAll('[data-number]')
+  // Select all buttons with data-operation attribute
   const operationButtons = document.querySelectorAll('[data-operation]')
+  // Select the button with data-equals attribute
   const equalsButton = document.querySelector('[data-equals]')
+  // Select the button with data-delete attribute
   const deleteButton = document.querySelector('[data-delete]')
+  // Select the button with data-all-clear attribute
   const allClearButton = document.querySelector('[data-all-clear]')
+  // Select the element with data-previous-operand attribute
   const previousOperandTextElement = document.querySelector('[data-previous-operand]')
+  // Select the element with data-current-operand attribute
   const currentOperandTextElement = document.querySelector('[data-current-operand]')
   
   const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
