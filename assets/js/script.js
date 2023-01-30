@@ -65,7 +65,7 @@ class Calculator {
 		default:
 		  return
 	  }
-	  
+
 	  // update the current operand with the result of the computation
 	  this.currentOperand = computation
 	  this.operation = undefined
@@ -74,18 +74,25 @@ class Calculator {
   
 	// function to format the display number
 	getDisplayNumber(number) {
+	  // Convert the number to a string
 	  const stringNumber = number.toString()
+	  // Split the string into the integer and decimal parts
 	  const integerDigits = parseFloat(stringNumber.split('.')[0])
 	  const decimalDigits = stringNumber.split('.')[1]
+	  // Create a variable to store the integer part of the number in display format
 	  let integerDisplay
+	  // If the integer part is not a number, set integerDisplay to an empty string
 	  if (isNaN(integerDigits)) {
 		integerDisplay = ''
 	  } else {
+		// Otherwise, format the integer part as a localised string with no fractional digits
 		integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
 	  }
+	  // If there are decimal digits, return the number in the format 'integerDisplay.decimalDigits'
 	  if (decimalDigits != null) {
 		return `${integerDisplay}.${decimalDigits}`
 	  } else {
+		// Otherwise, return just the formatted integer part
 		return integerDisplay
 	  }
 	}
