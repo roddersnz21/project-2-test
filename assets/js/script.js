@@ -125,17 +125,22 @@ class Calculator {
   // Select the element with data-current-operand attribute
   const currentOperandTextElement = document.querySelector('[data-current-operand]')
   
+  // Set calculator class to make variable operate in calculator object
   const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
   
+  // Add click event listener to each number button
   numberButtons.forEach(button => {
 	button.addEventListener('click', () => {
+	  // Append number to calculator and update display
 	  calculator.appendNumber(button.innerText)
 	  calculator.updateDisplay()
 	})
   })
   
+  // Add click event listener to each operation button
   operationButtons.forEach(button => {
 	button.addEventListener('click', () => {
+	  // Choose operation and update display
 	  calculator.chooseOperation(button.innerText)
 	  calculator.updateDisplay()
 	})
